@@ -35,7 +35,7 @@ app.post('/create-payment-intent', async (req: Request, res: Response) => {
     });
     res.json({ clientSecret: paymentIntent.client_secret });
   } catch (error) {
-    res.status(500).send({ error: error.message });
+    res.status(500).send({ error: 'An unknown error occurred' });
   }
 });
 
