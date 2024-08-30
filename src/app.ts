@@ -7,16 +7,14 @@ import notFound from './app/middlewares/notFound';
 import Stripe from 'stripe';
 
 const app: Application = express();
-const stripe = new Stripe(
-  'sk_test_51OFsgYEOWkAuBZzbzY0LdYi5HmyLndNbGdps32XRpBFIDo45Xvf5ntCQowKdUEH2jQtk2rjC6szgizYkjOxvLVbL008DowpWYm',
-);
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '');
 //parsers
 app.use(express.json());
 app.use(cookieParser());
 
 app.use(
   cors({
-    origin: ['http://localhost:5173'],
+    origin: ['http://localhost:5173', 'https://sports-facility-nu.vercel.app'],
     credentials: true,
   }),
 );

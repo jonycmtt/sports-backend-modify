@@ -4,7 +4,7 @@ Welcome to the Sports Facility Booking Platform! This project allows users to bo
 
 ## Live URL
 
-Access the live application at: [Sports Facility Booking Platform Live URL](https://assignment03-olive.vercel.app/)
+Access the live application at: [Sports Facility Booking Platform Live URL](https://sport-facilify-modify.vercel.app/)
 
 ## Features
 
@@ -69,6 +69,7 @@ Access the live application at: [Sports Facility Booking Platform Live URL](http
    BCRYPT_SALT_ROUNDS=12
    DEFAULT_PASS=your_default_password
    JWT_ACCESS_SECRET=your_jwt_secret
+   STRIPE_SECRET_KEY= your stripe payment secret key
 
    ```
 
