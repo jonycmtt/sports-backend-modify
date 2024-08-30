@@ -69,7 +69,6 @@ const createBookingIntoDB = async (payload: TBooking) => {
 
 const getAllBookingFromDB = async () => {
   const result = await Booking.find().populate('facility').populate('user');
-
   return result;
 };
 const getUserBookingFromDB = async (user: string) => {

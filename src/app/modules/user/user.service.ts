@@ -12,6 +12,9 @@ const signUpIntoDB = async (payload: TUser) => {
 const getAllUsersIntoDB = async () => {
   return await User.find();
 };
+const getSingleUsersIntoDB = async (id: string) => {
+  return await User.findById(id);
+};
 
 const loginFromDB = async (email: string, password: string) => {
   const user = await User.findOne({ email });
@@ -45,4 +48,9 @@ const loginFromDB = async (email: string, password: string) => {
   };
 };
 
-export const UserServices = { signUpIntoDB, loginFromDB, getAllUsersIntoDB };
+export const UserServices = {
+  signUpIntoDB,
+  loginFromDB,
+  getAllUsersIntoDB,
+  getSingleUsersIntoDB,
+};

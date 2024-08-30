@@ -40,6 +40,17 @@ const getAllUser = catchAsync(async (req, res) => {
     data: result,
   });
 });
+const getSingleUser = catchAsync(async (req, res) => {
+  const { id } = req.params;
+  const result = await UserServices.getSingleUsersIntoDB(id);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'User finding successfully',
+    data: result,
+  });
+});
 const login = catchAsync(async (req, res) => {
   const { email: paramEmail, password } = req.body;
   const result = await UserServices.loginFromDB(paramEmail, password);
@@ -62,4 +73,4 @@ const login = catchAsync(async (req, res) => {
   });
 });
 
-export const UserControllers = { signUp, login, getAllUser };
+export const UserControllers = { signUp, login, getAllUser, getSingleUser };

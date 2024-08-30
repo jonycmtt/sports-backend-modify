@@ -16,5 +16,6 @@ router.post(
   UserControllers.login,
 );
 router.get('/', UserControllers.getAllUser);
+router.get('/:id', UserControllers.getSingleUser);
 
 export const UserRoutes = router;
